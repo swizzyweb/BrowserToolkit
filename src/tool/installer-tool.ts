@@ -1,5 +1,5 @@
 // import { Axios } from "axios";
-import { Tool } from 'browser-toolkit-interface';
+import { Tool,  IToolInstaller } from '@swizzyweb/browser-toolkit-interface';
 
 // Let's get rid of the axios dependency for now...
 // export interface RemoteToolInstallerProps {
@@ -38,8 +38,13 @@ export interface InstallToolProps {
 //     }
     
 // }
-
-export class EasyRemoteToolInstaller implements Tool {
+//
+/*
+export interface IToolInstaller extends Tool {
+	
+};
+*/
+export class EasyRemoteToolInstaller implements IToolInstaller {
     readonly name: string = "InstallerTool";
     constructor(props: any) {
 

@@ -1,24 +1,32 @@
-import { IBrowserToolkit, Tool } from 'browser-toolkit-interface';
-
+import { IBrowserToolkit, Tool } from '@swizzyweb/browser-toolkit-interface';
+import { BrowserLogger, ILogger } from '@swizzyweb/swizzy-common';
 export interface BrowseToolkitProps {
-
+	logger?: ILogger;
 }
 
+export type Collection<V> = { [key: string]: V };
+
 export class BrowserToolkit implements IBrowserToolkit {
-    tools: Map<string, Tool>;
+    logger: ILogger;
+	tools: Collection<Tool>;
     constructor(props: BrowseToolkitProps) {
-        this.tools = new Map<string, Tool>();
+    	this.logger = props.logger??new BrowserLogger();
+        this.tools = {};
     }
 
-    addTool(tool: Tool) {
-        this.tools.set(tool.name, tool);
+    addTool(tool: Tool): void {
+        this.tools[tool.name] = tool;
     }
 
     getTool(toolName: string): Tool | undefined {
-        return this.tools.get(toolName);
+        return this.tools[toolName];
     }
 
-    getToolsNames() {
+	getTools(): Collection<Tool> {
+		return this.tools;
+	}
+
+    getToolsNames(): string[] {
         let toolNames = [];
         for(let key in this.tools.keys) {
             toolNames.push(key);
@@ -27,7 +35,8 @@ export class BrowserToolkit implements IBrowserToolkit {
         return toolNames;
     }
 
-    printTools() {
-        this.getToolsNames().forEach((name) => console.log(name));
+    printTools(): void {
+    	this.logger.info(`BrowserToolkitTools: ${JSON.stringify(this.tools)}`);
+        //Object.entries(this.tools).forEach((entry) => this.logger.info(entry);
     }
 }
