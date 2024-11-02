@@ -1,6 +1,6 @@
 {
   "name": "@swizzyweb/browser-toolkit",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "My webpack project",
   "main": "dist/main.js",
   "scripts": {
@@ -37,5 +37,11 @@
   "dependencies": {
     "@swizzyweb/browser-toolkit-interface": "^0.1.0",
     "@swizzyweb/swizzy-common": "^0.1.0"
-  }
+  },
+  "keywords": [
+    "browser",
+    "toolkit",
+    "swizzy",
+    "web"
+  ]
 }
