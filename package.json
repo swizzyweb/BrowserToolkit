@@ -15,14 +15,6 @@
   },
   "author": "WannaWatchMeCode",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wannawatchmecode/BrowserToolkit.git"
-  },
-  "bugs": {
-    "url": "https://github.com/wannawatchmecode/BrowserToolkit/issues"
-  },
-  "homepage": "https://github.com/wannawatchmecode/BrowserToolkit#readme",
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@webpack-cli/generators": "^3.0.7",
@@ -43,5 +35,13 @@
     "toolkit",
     "swizzy",
     "web"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swizzyweb/BrowserToolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/swizzyweb/BrowserToolkit/issues"
+  },
+  "homepage": "https://github.com/swizzyweb/BrowserToolkit#readme"
 }
